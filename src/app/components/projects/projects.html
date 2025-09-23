@@ -1,0 +1,21 @@
+<section id="projects" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5 text-primary">Projects</h2>
+    <div class="row g-4">
+      @for (project of [1, 2, 3]; track project) {
+        <div class="col-md-4">
+          <div class="card project-card shadow-sm h-100 border-0">
+            <img src="assets/project{{ project }}.jpg" class="card-img-top" alt="Project {{ project }}">
+            <div class="card-body">
+              <h5 class="card-title">Project {{ project }}</h5>
+              <p class="card-text text-muted">
+                Brief description of project {{ project }} goes here. Highlight tech used and your role.
+              </p>
+              <a href="#" target="_blank" class="btn btn-primary btn-sm">View Project</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

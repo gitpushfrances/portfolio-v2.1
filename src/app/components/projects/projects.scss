@@ -1,0 +1,22 @@
+#projects {
+  .project-card {
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      border-top-left-radius: 0.75rem;
+      border-top-right-radius: 0.75rem;
+      object-fit: cover;
+      height: 200px;
+    }
+
+    .card-body {
+      text-align: center;
+    }
+  }
+}

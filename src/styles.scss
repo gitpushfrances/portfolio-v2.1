@@ -1,1 +1,21 @@
-@import "bootstrap/scss/bootstrap";
+@use "bootstrap/scss/bootstrap" as *;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 70px; // prevents navbar overlap when jumping
+}
+
+.timeline {
+  border-left: 3px solid #0d6efd;
+  padding-left: 20px;
+}
+.timeline li::before {
+  content: "●";
+  color: #0d6efd;
+  position: absolute;
+  margin-left: -30px;
+}

@@ -1,0 +1,28 @@
+#experience {
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 3px solid #0d6efd;
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+
+      .timeline-marker {
+        position: absolute;
+        left: -11px;
+        top: 0.25rem;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #0d6efd;
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px #0d6efd33;
+      }
+
+      .timeline-content {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
