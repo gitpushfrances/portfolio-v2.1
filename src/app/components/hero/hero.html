@@ -1,8 +1,78 @@
-<section id="home" class="hero-section d-flex align-items-center min-vh-100 text-light">
-  <div class="container text-center">
-    <h1 class="display-3 fw-bold mb-3">Hi, I'm Frances 👋</h1>
-    <p class="lead mb-4 text-light">Frontend Developer | Angular Enthusiast | UI/UX Designer</p>
-    <a href="#projects" class="btn btn-lg btn-light fw-bold shadow-sm me-2">View My Work</a>
-    <a href="#contact" class="btn btn-lg btn-outline-light fw-bold">Contact Me</a>
+<section id="home" class="hero-section">
+  <!-- Animated Background Blobs -->
+  <div class="background-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text animate-slide-up">
+      <p class="greeting">Hi, I'm</p>
+      <h1 class="name gradient-text">John Frances Eder</h1>
+      <div class="role-container">
+        <span class="role-text">{{ displayedRole }}</span>
+        <span class="cursor">|</span>
+      </div>
+      <p class="description">
+        Building scalable web and mobile solutions with a focus on user experience 
+        and performance. Experienced in Angular, Laravel, and modern development practices.
+      </p>
+
+      <div class="cta-buttons">
+        <button class="btn btn-primary" (click)="scrollToSection('projects')">
+          <span>View My Work</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+        <button class="btn btn-secondary" (click)="scrollToSection('contact')">
+          <span>Get In Touch</span>
+        </button>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/gitpushfrances" target="_blank" class="social-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+        </a>
+        <a href="mailto:johnfrancesquiminaleseder@gmail.com" class="social-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+        <a href="tel:+639358474023" class="social-link">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image animate-float">
+      <div class="image-wrapper">
+        <div class="image-placeholder">
+          <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+            <circle cx="100" cy="100" r="100" fill="url(#gradient)"/>
+            <path d="M100 110c-16.569 0-30-13.431-30-30s13.431-30 30-30 30 13.431 30 30-13.431 30-30 30zm0 10c-33.137 0-60 20.298-60 45.333V170h120v-4.667C160 140.298 133.137 120 100 120z" fill="rgba(15, 23, 42, 0.6)"/>
+            <defs>
+              <linearGradient id="gradient" x1="0" y1="0" x2="200" y2="200">
+                <stop offset="0%" stop-color="#06b6d4"/>
+                <stop offset="100%" stop-color="#a855f7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator" (click)="scrollToSection('about')">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+    <p>Scroll Down</p>
   </div>
 </section>

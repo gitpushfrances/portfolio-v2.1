@@ -1,26 +1,44 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">JFE</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+<!-- Floating Glass Navbar -->
+<nav class="navbar-container" [class.scrolled]="isScrolled">
+  <div class="navbar-glass">
+    <!-- Logo -->
+    <div class="logo">
+      <span class="gradient-text font-bold text-xl">JF</span>
     </div>
+
+    <!-- Desktop Navigation -->
+    <ul class="nav-links desktop-nav">
+      <li *ngFor="let item of navItems">
+        <button 
+          (click)="scrollToSection(item.id)"
+          [class.active]="activeSection === item.id"
+          class="nav-link">
+          {{ item.label }}
+        </button>
+      </li>
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+      <span class="hamburger" [class.open]="isMobileMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="isMobileMenuOpen">
+    <ul class="mobile-nav-links">
+      <li *ngFor="let item of navItems">
+        <button 
+          (click)="scrollToSection(item.id)"
+          [class.active]="activeSection === item.id"
+          class="mobile-nav-link">
+          {{ item.label }}
+        </button>
+      </li>
+    </ul>
   </div>
 </nav>

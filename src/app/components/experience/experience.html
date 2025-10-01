@@ -1,21 +1,47 @@
-<section id="experience" class="py-5 bg-white">
+<section id="experience" class="experience-section">
   <div class="container">
-    <h2 class="fw-bold text-center mb-5 text-primary">Experience</h2>
+    <div class="section-header">
+      <span class="section-tag">Career Journey</span>
+      <h2 class="section-title">Work Experience</h2>
+    </div>
+
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <h5 class="fw-bold">Frontend Developer – Company A</h5>
-          <small class="text-muted">2022 – Present</small>
-          <p>Building and maintaining Angular applications, designing responsive layouts, and collaborating with UI/UX teams.</p>
+      <div class="timeline-item" *ngFor="let exp of experiences; let i = index">
+        <div class="timeline-marker">
+          <div class="marker-dot"></div>
+          <div class="marker-line" *ngIf="i < experiences.length - 1"></div>
         </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-marker"></div>
-        <div class="timeline-content">
-          <h5 class="fw-bold">Intern – Company B</h5>
-          <small class="text-muted">2021 – 2022</small>
-          <p>Supported frontend teams with bug fixes, documentation, and small feature development using Angular and Bootstrap.</p>
+
+        <div class="experience-card">
+          <div class="card-header">
+            <div class="company-info">
+              <h3 class="role">{{ exp.role }}</h3>
+              <div class="company-details">
+                <span class="company">{{ exp.company }}</span>
+                <span class="separator">•</span>
+                <span class="location">{{ exp.location }}</span>
+              </div>
+            </div>
+            <div class="period">{{ exp.period }}</div>
+          </div>
+
+          <p class="description">{{ exp.description }}</p>
+
+          <div class="achievements">
+            <h4>Key Achievements:</h4>
+            <ul>
+              <li *ngFor="let achievement of exp.achievements">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span>{{ achievement }}</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="technologies">
+            <span class="tech-tag" *ngFor="let tech of exp.technologies">{{ tech }}</span>
+          </div>
         </div>
       </div>
     </div>
