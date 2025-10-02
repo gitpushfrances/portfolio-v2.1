@@ -1,30 +1,30 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-// ✅ Correct Angular 20 style imports
-import { Navbar } from './components/navbar/navbar';
-import { Hero } from './components/hero/hero';
-import { About } from './components/about/about';
-import { Skills } from './components/skills/skills';
-import { Projects } from './components/projects/projects';
-import { Experience } from './components/experience/experience';
-import { Contact } from './components/contact/contact';
+// ✅ Import using the actual exported class names
+import { NavbarComponent } from './components/navbar/navbar';
+import { HeroComponent } from './components/hero/hero';
+import { AboutComponent } from './components/about/about';
+import { SkillsComponent } from './components/skills/skills';
+import { ProjectsComponent } from './components/projects/projects';
+import { ExperienceComponent } from './components/experience/experience';
+import { ContactComponent } from './components/contact/contact';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    Navbar,
-    Hero,
-    About,
-    Skills,
-    Projects,
-    Experience,
-    Contact
+    NavbarComponent,
+    HeroComponent,
+    AboutComponent,
+    SkillsComponent,
+    ProjectsComponent,
+    ExperienceComponent,
+    ContactComponent
   ],
   templateUrl: './app.html',
-  styleUrls: ['./app.scss'] // ✅ plural
+  styleUrls: ['./app.scss']
 })
 export class App {
   protected readonly title = signal('portfolio-app');
