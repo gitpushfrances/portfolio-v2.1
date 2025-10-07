@@ -25,7 +25,7 @@ export class HeroComponent implements OnInit {
 
   typeEffect() {
     const currentRole = this.roles[this.currentRoleIndex];
-    
+
     if (!this.isDeleting) {
       if (this.displayedRole.length < currentRole.length) {
         this.displayedRole = currentRole.substring(0, this.displayedRole.length + 1);
@@ -58,7 +58,6 @@ export class HeroComponent implements OnInit {
   }
 
   downloadResume() {
-    // Update this path to your actual resume file
     window.open('assets/resume.pdf', '_blank');
   }
 }

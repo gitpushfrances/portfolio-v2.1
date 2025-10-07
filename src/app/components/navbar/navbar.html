@@ -1,15 +1,15 @@
 <!-- Floating Glass Navbar -->
 <nav class="navbar-container" [class.scrolled]="isScrolled">
   <div class="navbar-glass">
-    <!-- Logo -->
-    <div class="logo">
+    <!-- Logo - Always visible -->
+    <div class="logo" (click)="scrollToSection('home')">
       <span class="gradient-text font-bold text-xl">JF</span>
     </div>
 
     <!-- Desktop Navigation -->
     <ul class="nav-links desktop-nav">
       <li *ngFor="let item of navItems">
-        <button 
+        <button
           (click)="scrollToSection(item.id)"
           [class.active]="activeSection === item.id"
           class="nav-link">
@@ -19,7 +19,11 @@
     </ul>
 
     <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+    <button
+      class="mobile-menu-btn"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle menu"
+      [attr.aria-expanded]="isMobileMenuOpen">
       <span class="hamburger" [class.open]="isMobileMenuOpen">
         <span></span>
         <span></span>
@@ -27,18 +31,25 @@
       </span>
     </button>
   </div>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" [class.open]="isMobileMenuOpen">
-    <ul class="mobile-nav-links">
-      <li *ngFor="let item of navItems">
-        <button 
-          (click)="scrollToSection(item.id)"
-          [class.active]="activeSection === item.id"
-          class="mobile-nav-link">
-          {{ item.label }}
-        </button>
-      </li>
-    </ul>
-  </div>
 </nav>
+
+<!-- Mobile Menu Overlay -->
+<div
+  class="mobile-menu-overlay"
+  [class.open]="isMobileMenuOpen"
+  (click)="closeMobileMenu()">
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [class.open]="isMobileMenuOpen">
+  <ul class="mobile-nav-links">
+    <li *ngFor="let item of navItems">
+      <button
+        (click)="scrollToSection(item.id)"
+        [class.active]="activeSection === item.id"
+        class="mobile-nav-link">
+        {{ item.label }}
+      </button>
+    </li>
+  </ul>
+</div>
