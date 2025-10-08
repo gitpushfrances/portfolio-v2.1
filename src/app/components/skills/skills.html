@@ -1,7 +1,6 @@
 <section id="skills" class="skills-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">My Expertise</span>
       <h2 class="section-title">Skills & Technologies</h2>
       <p class="section-subtitle">
         Technologies and tools I use to bring ideas to life
@@ -13,7 +12,9 @@
         <h3 class="category-title">{{ category }}</h3>
         <div class="skills-grid">
           <div class="skill-card" *ngFor="let skill of getSkillsByCategory(category)">
-            <div class="skill-icon">{{ skill.icon }}</div>
+            <div class="skill-icon">
+              <img [src]="getIconUrl(skill.icon)" [alt]="skill.name + ' icon'" />
+            </div>
             <div class="skill-name">{{ skill.name }}</div>
           </div>
         </div>

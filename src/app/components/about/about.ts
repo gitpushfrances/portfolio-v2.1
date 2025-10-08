@@ -17,6 +17,6 @@ export class AboutComponent {
   ];
 
   downloadResume() {
-    window.open('assets/resume.pdf', '_blank');
+    window.open('assets/John-Frances-Eder-Resume.pdf', '_blank');
   }
 }

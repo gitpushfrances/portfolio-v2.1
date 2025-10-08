@@ -17,34 +17,29 @@ interface Skill {
 export class SkillsComponent {
   skills: Skill[] = [
     // Frontend
-    { name: 'Angular', icon: '⚡', category: 'Frontend' },
-    { name: 'HTML5', icon: '🌐', category: 'Frontend' },
-    { name: 'CSS3', icon: '🎨', category: 'Frontend' },
-    { name: 'Bootstrap', icon: '📱', category: 'Frontend' },
-    { name: 'Tailwind', icon: '💨', category: 'Frontend' },
-    { name: 'Figma', icon: '🎯', category: 'Frontend' },
-    
+    { name: 'Angular', icon: 'angular', category: 'Frontend' },
+    { name: 'HTML5', icon: 'html5', category: 'Frontend' },
+    { name: 'CSS3', icon: 'css3', category: 'Frontend' },
+    { name: 'Bootstrap', icon: 'bootstrap', category: 'Frontend' },
+    { name: 'Tailwind CSS', icon: 'tailwindcss', category: 'Frontend' },
+    { name: 'Figma', icon: 'figma', category: 'Frontend' },
+
     // Backend
-    { name: 'Laravel', icon: '🔺', category: 'Backend' },
-    { name: 'REST API', icon: '🔌', category: 'Backend' },
-    { name: 'MySQL', icon: '🗄️', category: 'Backend' },
-    { name: 'Firebase', icon: '🔥', category: 'Backend' },
-    
+    { name: 'Laravel', icon: 'laravel', category: 'Backend' },
+    { name: 'PHP', icon: 'php', category: 'Backend' },
+    { name: 'MySQL', icon: 'mysql', category: 'Backend' },
+    { name: 'Firebase', icon: 'firebase', category: 'Backend' },
+
     // Mobile
-    { name: 'Android', icon: '🤖', category: 'Mobile' },
-    { name: 'Java', icon: '☕', category: 'Mobile' },
-    { name: 'Flutter', icon: '💙', category: 'Mobile' },
-    
+    { name: 'Android', icon: 'android', category: 'Mobile' },
+    { name: 'Java', icon: 'openjdk', category: 'Mobile' },
+    { name: 'Flutter', icon: 'flutter', category: 'Mobile' },
+
     // Tools
-    { name: 'Git', icon: '📚', category: 'Tools' },
-    { name: 'GitHub', icon: '🐙', category: 'Tools' },
-    { name: 'Postman', icon: '📮', category: 'Tools' },
-    { name: 'Jira', icon: '📊', category: 'Tools' },
-    
-    // Other
-    { name: 'IoT', icon: '🔧', category: 'Other' },
-    { name: 'Arduino', icon: '⚙️', category: 'Other' },
-    { name: 'CI/CD', icon: '🚀', category: 'Other' }
+    { name: 'Git', icon: 'git', category: 'Tools' },
+    { name: 'GitHub', icon: 'github', category: 'Tools' },
+    { name: 'Postman', icon: 'postman', category: 'Tools' },
+    { name: 'Jira', icon: 'jira', category: 'Tools' }
   ];
 
   get categories() {
@@ -53,5 +48,9 @@ export class SkillsComponent {
 
   getSkillsByCategory(category: string) {
     return this.skills.filter(skill => skill.category === category);
+  }
+
+  getIconUrl(icon: string): string {
+    return `https://cdn.simpleicons.org/${icon}`;
   }
 }
