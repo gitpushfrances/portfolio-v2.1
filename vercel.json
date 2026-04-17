@@ -1,6 +1,6 @@
 {
   "installCommand": "npm install",
-  "buildCommand": "npm run build && ls -la /vercel/path0/",
+  "buildCommand": "npm run build",
   "outputDirectory": "browser",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
