@@ -1,7 +1,7 @@
 {
   "installCommand": "npm install",
-  "buildCommand": "npm run build && cp -r /vercel/path0/browser /vercel/path0/dist",
-  "outputDirectory": "dist",
+  "buildCommand": "npm run build",
+  "outputDirectory": "/vercel/path0/browser",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
