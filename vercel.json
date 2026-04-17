@@ -1,7 +1,7 @@
 {
   "version": 2,
   "buildCommand": "npm run build -- --configuration production",
-  "outputDirectory": "dist/portfolio-app/browser",
+  "outputDirectory": "dist/portfolio-app",
   "installCommand": "npm install",
   "framework": "angular",
   "rewrites": [
